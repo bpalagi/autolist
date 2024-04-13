@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import InputField from "./components/InputField";
+import ProfileBasic from "./components/ProfileBasic";
 
 const App: React.FC = () => {
   const [profileInput, setProfileInput] = useState<string>("")
@@ -12,19 +13,22 @@ const App: React.FC = () => {
 
     setProfileInput("");
 
-    // RUN OUR TWITTER API CALLS HERE
+    // make api call to Twitter for creating a new List called profileInput
 
 
+    // make api call to Twitter for adding all followers of profileInput to the List
+    
 
+    
   };
 
   return (
-    <div>
-      <div className="App">
-        <span className="heading">Twitter List Generator</span>
-        <InputField profileInput={profileInput} setProfileInput={setProfileInput} handleGo={handleGo} />
-      </div>
-      <a class="twitter-timeline" href="https://twitter.com/SahilBloom?ref_src=twsrc%5Etfw">Tweets by SahilBloom</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <div className="App">
+      <span className="heading">Twitter List Generator</span>
+      <InputField profileInput={profileInput} setProfileInput={setProfileInput} handleGo={handleGo} />
+      <br />
+      <ProfileBasic profileInput={profileInput} />
+      <br />
     </div>
   );
 };
